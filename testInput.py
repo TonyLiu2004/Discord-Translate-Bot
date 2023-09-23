@@ -1,5 +1,6 @@
 import discord
 from discord import app_commands 
+import translater
 
 class aclient(discord.Client):
     def __init__(self):
@@ -16,9 +17,9 @@ class aclient(discord.Client):
 client = aclient()
 tree = app_commands.CommandTree(client)
 
-@tree.command(name = 'tester', description='testing') #guild specific slash command         removed: guild = discord.Object(id=809441460704378931),
-async def slash2(interaction: discord.Interaction, name: str): # the string name is a required input
-    await interaction.response.send_message(f"Hello {name}! I was made with Discord.py!")#, ephemeral = True) makes the output only visible to sender
+@tree.command(name = 'translate', description='translates') #guild specific slash command         removed: guild = discord.Object(id=809441460704378931),
+async def translate(interaction: discord.Interaction, language: str, sentence: str):
+    await interaction.response.send_message(translater.translate(sentence,language))#, ephemeral = True) makes the output only visible to sender
 
-client.run("MTE1Mzg2NzE1OTQwNDAyNzk1NQ.GgXezv.E52_69NRvYT3hUBKPMF0vwZsLG_GUG2yiScszE")
+client.run("")
 #server id: 809441460704378931

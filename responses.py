@@ -1,11 +1,11 @@
 import random
-import test
+import translater
 
 def getResponse(message: str) -> str:
     p_message = message.lower()
 
     if(p_message == '~hello'):
-        return hi("Hello there?")
+        return "Hello there!"
     
     if(p_message == '~roll'):
         return str(random.randint(1,6))
@@ -17,6 +17,6 @@ def getResponse(message: str) -> str:
         args = p_message.split()[1:]
         lang = args[0]
         user_input = ' '.join(args[1:])
-        return test.translate(user_input,lang)
+        return translater.translate(user_input,lang)
     
     #return "idk man"

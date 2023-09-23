@@ -15,7 +15,7 @@ def translate(userInput,lang):
     if user_language in valid_languages:
         return translator.translate(user_input, dest=user_language).text
     else:
-        return "Please enter a valid language. The format is '~translate <language> input'. Use ~list for a list of languages."
+        return "Please enter a valid language. Use list for a list of languages."
 
 def list():
     translated = ""
