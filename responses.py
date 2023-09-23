@@ -5,7 +5,7 @@ def getResponse(message: str) -> str:
     p_message = message.lower()
 
     if(p_message == '~hello'):
-        return 'Hi there!'
+        return hi("Hello there?")
     
     if(p_message == '~roll'):
         return str(random.randint(1,6))
@@ -18,7 +18,5 @@ def getResponse(message: str) -> str:
         lang = args[0]
         user_input = ' '.join(args[1:])
         return test.translate(user_input,lang)
-    if(p_message == '~list'):
-        return test.list()
     
     #return "idk man"
